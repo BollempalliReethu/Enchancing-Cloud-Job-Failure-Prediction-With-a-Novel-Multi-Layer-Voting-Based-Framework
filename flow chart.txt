@@ -1,0 +1,50 @@
+Dataset link: https://www.kaggle.com/datasets/derrickmwiti/google-2019-cluster-sample/data
+
+Notebook:
+=========
+1. Importing the packages
+2. Exploring the processed Enhancing Cloud Job Failure Prediction dataset 
+3. Data Preprocessing.
+                  - Data cleaning 
+                  - Data Normalization
+                  - remove the unnecessary columns 
+4. Data Visualization
+	- Visualization of dataset
+	- Correlation Matrix
+5. Label encoding using label encoder
+6. Dataset splitting
+	- 80/20
+7. Data Normalization
+	- Standard Scaler
+8. Build the Classification models
+	- DT
+	- KNN
+	- ANN
+	- XGBoost
+	- AdaBoost
+	- Voting Classifier (DT + KNN + ANN, voting=hard)
+	- Stacking Classifier (estimators (RF + KNN + MLP), meta estimator( Logistic Regression)
+9. Training the model
+10. Comparing the models with Accuracy, precision, recall, f1 score,Confusion matrix
+11. Comparison Graphs are generated with scores of all models.
+12. Save the best trained model
+13. XAI - Lime and SHAP
+
+
+Front-end:
+==========
+
+1. Frontend is developed with help of Flask Framework, along with Registration and Login setup with support of SQLite DB 
+2. For the frontend we used the data for prediction 
+3. User gives input as Feature Values 
+4. The given input is preprocessed for prediction 
+5. Trained model is used for prediction 
+6. Final outcome is displayed through frontend
+
+Extension:
+==========
+   The proposed model is a novel machine learning approach for accurately predicting and classifying job failures in modern cloud data centers. By combining multiple classifiers through a fine-tuned voting mechanism and leveraging Random Forest for failure type identification, the ensemble voting classifier (MMPF) achieves outstanding accuracy of 99.83% in failure detection and 99.97% in failure classification using the Google Cluster 2019 dataset.
+
+    As an extension, we implemented an additional ensemble model using a Stacking Classifier, comprising Random Forest (RF), K-Nearest Neighbors (KNN), and Multilayer Perceptron (MLP) as base estimators, with Logistic Regression as the meta-estimator. This stacked model achieved an impressive 100% accuracy in predicting job failures. All existing and proposed models were built and evaluated for performance comparison.
+
+    To enhance interpretability, we employed Explainable AI (XAI) techniques such as LIME and SHAP to analyze and visualize the importance of feature values contributing to the predictions. Furthermore, a Flask-based user interface was developed, allowing users to input data and obtain predictions using the trained models on the dataset.

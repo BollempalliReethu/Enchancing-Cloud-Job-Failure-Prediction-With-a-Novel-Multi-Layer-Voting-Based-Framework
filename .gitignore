@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+anaconda_projects/
+signup.db
+borg_traces_data.csv

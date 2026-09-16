@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <title>Prediction Results - Cloud Job Failure Prediction</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Job Prediction<span class="dot">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Failure Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/graphs">Data Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../static/Notebook.html">Notebook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- RESULTS SECTION -->
+    <section id="results-section" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="results-container">
+                        <!-- Header -->
+                        <div class="results-header text-center mb-5">
+                            <h2 class="results-title">Prediction Results</h2>
+                            <p class="results-subtitle">Cloud Job Failure Analysis Complete</p>
+                        </div>
+
+                        <!-- Main Result Card -->
+                        <div class="result-card">
+                            <div class="result-status">
+                                <div class="status-icon">
+                                    {% if pred_class == 0 %}
+                                        <i class='bx bx-check'></i>
+                                    {% elif pred_class == 1 %}
+                                        <i class='bx bx-x'></i>
+                                    {% else %}
+                                        <i class='bx bx-error'></i>
+                                    {% endif %}
+                                </div>
+                                <div class="status-content">
+                                    <h3 class="status-title">
+                                        {% if pred_class == 0 %}
+                                            Job Will Complete Successfully
+                                        {% elif pred_class == 1 %}
+                                            Job Failure Predicted
+                                        {% else %}
+                                            Analysis Error
+                                        {% endif %}
+                                    </h3>
+                                    <div class="confidence-score">
+                                        <span class="confidence-label">Confidence Level:</span>
+                                        <span class="confidence-value">{{ "%.1f"|format(confidence * 100) }}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Analysis -->
+                        <div class="analysis-section">
+                            <h4 class="analysis-title">Detailed Analysis</h4>
+                            <div class="analysis-grid">
+                                <div class="analysis-card">
+                                    <div class="analysis-card-header">
+                                        <div class="analysis-icon">
+                                            <i class='bx bx-trending-up'></i>
+                                        </div>
+                                        <h5 class="analysis-card-title">Risk Assessment</h5>
+                                    </div>
+                                    <div class="analysis-card-body">
+                                        <p>
+                                            {% if pred_class == 0 %}
+                                                Low risk of failure detected. The job parameters indicate stable execution conditions.
+                                            {% elif pred_class == 1 %}
+                                                High risk of failure detected. Immediate attention required to prevent job failure.
+                                            {% else %}
+                                                Unable to assess risk due to analysis error.
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="analysis-card">
+                                    <div class="analysis-card-header">
+                                        <div class="analysis-icon">
+                                            <i class='bx bx-time-five'></i>
+                                        </div>
+                                        <h5 class="analysis-card-title">Execution Timeline</h5>
+                                    </div>
+                                    <div class="analysis-card-body">
+                                        <p>
+                                            {% if pred_class == 0 %}
+                                                Expected completion within normal parameters. No timeline concerns.
+                                            {% elif pred_class == 1 %}
+                                                Potential delays or interruptions expected. Monitor execution closely.
+                                            {% else %}
+                                                Timeline assessment unavailable.
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recommended Actions -->
+                        <div class="actions-section">
+                            <h4 class="actions-title">Recommended Actions</h4>
+                            <div class="actions-grid">
+                                {% if pred_class == 0 %}
+                                    <div class="action-card success">
+                                        <div class="action-card-header">
+                                            <div class="action-icon">
+                                                <i class='bx bx-check'></i>
+                                            </div>
+                                            <h5 class="action-card-title">Continue Normal Operation</h5>
+                                        </div>
+                                        <div class="action-card-body">
+                                            <p>No immediate action required. Monitor job execution for any unexpected changes.</p>
+                                        </div>
+                                    </div>
+                                    <div class="action-card info">
+                                        <div class="action-card-header">
+                                            <div class="action-icon">
+                                                <i class='bx bx-shield'></i>
+                                            </div>
+                                            <h5 class="action-card-title">Maintain Current Settings</h5>
+                                        </div>
+                                        <div class="action-card-body">
+                                            <p>Keep current resource allocation and scheduling parameters as they are optimal.</p>
+                                        </div>
+                                    </div>
+                                {% elif pred_class == 1 %}
+                                    <div class="action-card warning">
+                                        <div class="action-card-header">
+                                            <div class="action-icon">
+                                                <i class='bx bx-error-alt'></i>
+                                            </div>
+                                            <h5 class="action-card-title">Immediate Intervention Required</h5>
+                                        </div>
+                                        <div class="action-card-body">
+                                            <p>Take immediate action to prevent job failure. Review resource allocation and scheduling.</p>
+                                        </div>
+                                    </div>
+                                    <div class="action-card critical">
+                                        <div class="action-card-header">
+                                            <div class="action-icon">
+                                                <i class='bx bx-reset'></i>
+                                            </div>
+                                            <h5 class="action-card-title">Reschedule or Reallocate Resources</h5>
+                                        </div>
+                                        <div class="action-card-body">
+                                            <p>Consider rescheduling the job or increasing resource allocation to prevent failure.</p>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="action-card error">
+                                        <div class="action-card-header">
+                                            <div class="action-icon">
+                                                <i class='bx bx-error'></i>
+                                            </div>
+                                            <h5 class="action-card-title">Retry Analysis</h5>
+                                        </div>
+                                        <div class="action-card-body">
+                                            <p>An error occurred during analysis. Please try again with valid input parameters.</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Next Steps -->
+                        <div class="next-steps-section">
+                            <h4 class="next-steps-title">Next Steps</h4>
+                            <div class="steps-timeline">
+                                {% if pred_class == 0 %}
+                                    <div class="step-item completed">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Monitor Job Execution</h5>
+                                            <p>Continue monitoring the job for any unexpected behavior or resource issues.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item completed">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Document Success Metrics</h5>
+                                            <p>Record successful execution parameters for future reference and optimization.</p>
+                                        </div>
+                                    </div>
+                                {% elif pred_class == 1 %}
+                                    <div class="step-item urgent">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Review Resource Allocation</h5>
+                                            <p>Immediately check and adjust memory, CPU, and scheduling parameters.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item urgent">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Implement Preventive Measures</h5>
+                                            <p>Apply recommended fixes to prevent the predicted failure scenario.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item urgent">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Monitor Closely</h5>
+                                            <p>Set up enhanced monitoring to track the job's execution and intervention effectiveness.</p>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="step-item error">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Verify Input Parameters</h5>
+                                            <p>Check that all input values are within valid ranges and properly formatted.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item error">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Retry Prediction</h5>
+                                            <p>Submit the form again with corrected parameters for a new analysis.</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="info-section">
+                            <h4 class="info-title">Additional Information</h4>
+                            <div class="info-cards">
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="info-icon">
+                                            <i class='bx bx-shield'></i>
+                                        </div>
+                                        <h5 class="info-card-title">System Reliability</h5>
+                                    </div>
+                                    <div class="info-card-body">
+                                        <p>Advanced prediction system designed to provide reliable insights for cloud job management and optimization.</p>
+                                    </div>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="info-icon">
+                                            <i class='bx bx-data'></i>
+                                        </div>
+                                        <h5 class="info-card-title">Data Analysis</h5>
+                                    </div>
+                                    <div class="info-card-body">
+                                        <p>Comprehensive analysis of job parameters and historical patterns to provide accurate predictions.</p>
+                                    </div>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="info-icon">
+                                            <i class='bx bx-time-five'></i>
+                                        </div>
+                                        <h5 class="info-card-title">Real-time Processing</h5>
+                                    </div>
+                                    <div class="info-card-body">
+                                        <p>Instant analysis and results generation for immediate decision making and action planning.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <a href="/home" class="btn btn-primary">
+                                <i class='bx bx-plus'></i>
+                                New Prediction
+                            </a>
+                            <a href="/graphs" class="btn btn-secondary">
+                                <i class='bx bx-line-chart'></i>
+                                View Data Analysis
+                            </a>
+                            <button class="btn btn-download" onclick="downloadReport()">
+                                <i class='bx bx-download'></i>
+                                Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">Copyright vicpra 2025. All rights Reserved</p> Distributed By <a href="#">Job Prediction</a>
+        </div>
+    </footer>
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    
+    <script>
+        function downloadReport() {
+            // Create a simple report content
+            const reportContent = `
+Cloud Job Failure Prediction Report
+=====================================
+
+Prediction Result: ${document.querySelector('.status-title').textContent}
+Confidence Level: ${document.querySelector('.confidence-value').textContent}
+Analysis Date: ${new Date().toLocaleString()}
+
+Detailed Analysis:
+${document.querySelector('.analysis-content p').textContent}
+
+Recommended Actions:
+${Array.from(document.querySelectorAll('.action-content h5')).map(h5 => h5.textContent).join('\n')}
+
+Next Steps:
+${Array.from(document.querySelectorAll('.step-content h5')).map(h5 => h5.textContent).join('\n')}
+
+---
+Generated by Cloud Job Failure Prediction System
+            `;
+            
+            const blob = new Blob([reportContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'prediction-report.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+
+</html>

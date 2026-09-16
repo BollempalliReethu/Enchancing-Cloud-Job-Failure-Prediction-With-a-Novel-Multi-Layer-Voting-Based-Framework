@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <title>Prediction - Enhancing Cloud Job Failure Prediction with a Novel Multilayer Voting-Based Framework</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/home">Job Prediction<span class="dot">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="/home">Failure Prediction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/graphs">Data Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../static/Notebook.html">Notebook</a>
+                    </li> 
+                    <a href="/"
+                    class="btn btn-brand ms-lg-3">Log Out</a>                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SLIDER -->
+    <div class="owl-carousel owl-theme hero-slider">
+        <div class="slide slide1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-white">
+                        <h6 class="text-white text-uppercase">Welcome To Dashboard</h6>
+                        <h1 class="display-3 my-4">Enhancing Cloud Job Failure Prediction with a Novel Multilayer Voting-Based Framework</h1>
+                        <a href="#prediction-form" class="btn btn-brand">Get Started</a>
+                        <a href="/graphs" class="btn btn-outline-light ms-3">View Data Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-1 text-white">
+                        <h6 class="text-white text-uppercase">Welcome To Dashboard</h6>
+                        <h1 class="display-3 my-4">Enhancing Cloud Job Failure Prediction with a Novel Multilayer Voting-Based Framework</h1>
+                        <a href="#prediction-form" class="btn btn-brand">Get Started</a>
+                        <a href="/graphs" class="btn btn-outline-light ms-3">View Data Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PREDICTION FORM SECTION -->
+    <section id="prediction-form" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form-container">
+                        <div class="form-header text-center mb-5">
+                            <h2 class="form-title">Cloud Job Failure Prediction</h2>
+                            <p class="form-subtitle">Enter the job parameters to predict potential failures</p>
+                        </div>
+                        
+                        <form class="prediction-form" id="jobPredictionForm" action="/predict" method="post">
+                            <div class="row g-4">
+                                <!-- Time -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="time" class="form-label">Time</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="time" name="time" placeholder="Enter time value" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-time'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Instance Events Type -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="instance_events_type" class="form-label">Instance Events Type</label>
+                                        <div class="input-wrapper">
+                                            <select class="form-control" id="instance_events_type" name="instance_events_type" required>
+                                                <option value="">Select event type</option>
+                                                <option value="0">Type 0</option>
+                                                <option value="1">Type 1</option>
+                                                <option value="2">Type 2</option>
+                                                <option value="3">Type 3</option>
+                                                <option value="4">Type 4</option>
+                                                <option value="5">Type 5</option>
+                                                <option value="6">Type 6</option>
+                                                <option value="7">Type 7</option>
+                                                <option value="8">Type 8</option>
+                                                <option value="9">Type 9</option>
+                                                <option value="10">Type 10</option>
+                                            </select>
+                                            <div class="form-icon">
+                                                <i class='bx bx-cog'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Scheduling Class -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="scheduling_class" class="form-label">Scheduling Class</label>
+                                        <div class="input-wrapper">
+                                            <select class="form-control" id="scheduling_class" name="scheduling_class" required>
+                                                <option value="">Select scheduling class</option>
+                                                <option value="0">Class 0</option>
+                                                <option value="1">Class 1</option>
+                                                <option value="2">Class 2</option>
+                                                <option value="3">Class 3</option>
+                                            </select>
+                                            <div class="form-icon">
+                                                <i class='bx bx-calendar'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Collection Type -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="collection_type" class="form-label">Collection Type</label>
+                                        <div class="input-wrapper">
+                                            <select class="form-control" id="collection_type" name="collection_type" required>
+                                                <option value="">Select collection type</option>
+                                                <option value="0">Type 0</option>
+                                                <option value="1">Type 1</option>
+                                            </select>
+                                            <div class="form-icon">
+                                                <i class='bx bx-collection'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="priority" class="form-label">Priority</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="priority" name="priority" placeholder="Enter priority value" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-star'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Instance Index -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="instance_index" class="form-label">Instance Index</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="instance_index" name="instance_index" placeholder="Enter instance index" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-hash'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Collections Events Type -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="collections_events_type" class="form-label">Collections Events Type</label>
+                                        <div class="input-wrapper">
+                                            <select class="form-control" id="collections_events_type" name="collections_events_type" required>
+                                                <option value="">Select collections event type</option>
+                                                <option value="0">Type 0</option>
+                                                <option value="1">Type 1</option>
+                                                <option value="2">Type 2</option>
+                                                <option value="3">Type 3</option>
+                                                <option value="4">Type 4</option>
+                                                <option value="5">Type 5</option>
+                                                <option value="6">Type 6</option>
+                                                <option value="7">Type 7</option>
+                                                <option value="8">Type 8</option>
+                                                <option value="9">Type 9</option>
+                                                <option value="10">Type 10</option>
+                                            </select>
+                                            <div class="form-icon">
+                                                <i class='bx bx-list-ul'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Start Time -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="start_time" class="form-label">Start Time</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="start_time" name="start_time" placeholder="Enter start time" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-play-circle'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- End Time -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="end_time" class="form-label">End Time</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="end_time" name="end_time" placeholder="Enter end time" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-stop-circle'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Assigned Memory -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="assigned_memory" class="form-label">Assigned Memory</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="assigned_memory" name="assigned_memory" placeholder="Enter assigned memory (MB)" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-memory-card'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Page Cache Memory -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="page_cache_memory" class="form-label">Page Cache Memory</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="page_cache_memory" name="page_cache_memory" placeholder="Enter page cache memory (MB)" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-data'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sample Rate -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="sample_rate" class="form-label">Sample Rate</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="sample_rate" name="sample_rate" placeholder="Enter sample rate" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-trending-up'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cluster -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cluster" class="form-label">Cluster</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control" id="cluster" name="cluster" placeholder="Enter cluster name" required>
+                                            <div class="form-icon">
+                                                <i class='bx bx-server'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-predict">
+                                    <span class="btn-text">Predict Job Failure</span>
+                                    <span class="btn-icon">
+                                        <i class='bx bx-analyse'></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        <h6>Our Services</h6>
+                        <h1>What We Offer?</h1>
+                        <p class="mx-auto">Our intelligent cloud job failure prediction system leverages machine learning and ensemble techniques to deliver advanced analytics, resource optimization, and proactive failure management for modern cloud environments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="../static/img/prediction.png" alt="">
+                        <h5>Failure Prediction</h5>
+                        <p>Accurately predicts cloud job failures using multilayer voting-based machine learning models, enabling preemptive action and reducing system downtime.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="../static/img/log-data.png" alt="">
+                        <h5>Log Data Analysis</h5>
+                        <p>Analyzes large volumes of cloud job logs to uncover failure patterns, anomalies, and system behavior trends using intelligent data processing techniques.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="../static/img/ml-integration.png" alt="">
+                        <h5>Machine Learning Integration</h5>
+                        <p>Integrates multiple ML models in a layered ensemble framework to enhance prediction accuracy, robustness, and adaptability to various cloud workloads.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="../static/img/monitoring.png" alt="">
+                        <h5>Real-Time Monitoring</h5>
+                        <p>Supports real-time prediction and monitoring of job failures, allowing administrators to take timely corrective actions and improve system resilience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="../static/img/optimization.png" alt="">
+                        <h5>Resource Optimization</h5>
+                        <p>Improves overall resource utilization by reducing unnecessary re-executions and allocating compute resources based on intelligent prediction outcomes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service">
+                        <img src="../static/img/scalable.png" alt="">
+                        <h5>Scalable Framework</h5>
+                        <p>Designed to scale with large and complex cloud environments, supporting high-volume data, model extensibility, and integration with cloud platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">Copyright vicpra 2025. All rights Reserved</p> Distributed By <a
+                hrefs="#">Job Prediction</a>
+        </div>
+    </footer>
+
+
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    
+    <!-- Form Enhancement Script -->
+    <script>
+        $(document).ready(function() {
+            // Form validation and enhancement
+            const form = $('#jobPredictionForm');
+            const submitBtn = $('.btn-predict');
+            
+            // Add floating label effect
+            $('.form-control').on('focus blur', function() {
+                const $this = $(this);
+                const $label = $this.closest('.form-group').find('.form-label');
+                
+                if ($this.is(':focus') || $this.val() !== '') {
+                    $label.addClass('active');
+                } else {
+                    $label.removeClass('active');
+                }
+            });
+            
+            // Form submission with loading state
+            form.on('submit', function(e) {
+                e.preventDefault();
+                
+                // Add loading state
+                submitBtn.addClass('form-loading');
+                submitBtn.find('.btn-text').text('Analyzing...');
+                submitBtn.find('.btn-icon').html('<i class="bx bx-loader-alt bx-spin"></i>');
+            
+            
+            // Real-time validation
+            $('.form-control').on('input', function() {
+                const $this = $(this);
+                const value = $this.val();
+                
+                // Remove previous validation classes
+                $this.removeClass('is-valid is-invalid');
+                
+                // Add validation based on field type
+                if ($this.attr('type') === 'number') {
+                    const min = parseFloat($this.attr('min'));
+                    const max = parseFloat($this.attr('max'));
+                    
+                    if (value !== '' && !isNaN(value)) {
+                        if ((min !== undefined && parseFloat(value) < min) || 
+                            (max !== undefined && parseFloat(value) > max)) {
+                            $this.addClass('is-invalid');
+                        } else {
+                            $this.addClass('is-valid');
+                        }
+                    }
+                } else if (value.length > 0) {
+                    $this.addClass('is-valid');
+                }
+            });
+            
+            // Animate form elements on scroll
+            $(window).on('scroll', function() {
+                const formSection = $('#prediction-form');
+                const scrollTop = $(window).scrollTop();
+                const elementTop = formSection.offset().top;
+                const elementHeight = formSection.outerHeight();
+                const windowHeight = $(window).height();
+                
+                if (scrollTop > elementTop - windowHeight + 100) {
+                    formSection.addClass('animate-in');
+                }
+            });
+            
+            // Notification system
+            function showNotification(message, type = 'info') {
+                const notification = $(`
+                    <div class="notification notification-${type}">
+                        <i class="bx ${type === 'success' ? 'bx-check-circle' : 'bx-info-circle'}"></i>
+                        <span>${message}</span>
+                    </div>
+                `);
+                
+                $('body').append(notification);
+                
+                // Animate in
+                setTimeout(() => notification.addClass('show'), 100);
+                
+                // Auto remove
+                setTimeout(() => {
+                    notification.removeClass('show');
+                    setTimeout(() => notification.remove(), 300);
+                }, 4000);
+            }
+        });
+    </script>
+    
+    <style>
+        /* Additional notification styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification-success {
+            border-left: 4px solid #28a745;
+        }
+        
+        .notification-success i {
+            color: #28a745;
+        }
+        
+        .notification-info {
+            border-left: 4px solid var(--brand);
+        }
+        
+        .notification-info i {
+            color: var(--brand);
+        }
+        
+        .form-label.active {
+            color: var(--brand);
+            transform: translateY(-5px);
+        }
+        
+        .form-control.is-valid {
+            border-color: #28a745;
+        }
+        
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+        
+        #prediction-form.animate-in .form-group {
+            animation-play-state: running;
+        }
+    </style>
+</body>
+
+</html>

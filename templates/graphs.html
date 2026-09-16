@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <title>Data Analysis - Cloud Job Failure Prediction</title>
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+    <!-- BOTTOM NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Prediction<span class="dot">.</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Failure Prediction</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link active" href="/graphs">Data Analysis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../static/Notebook.html">Notebook</a>
+            </li>
+            <a href="/"
+            class="btn btn-brand ms-lg-3">Log Out</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="intro">
+              <h6>Data Analysis</h6>
+              <h1>Cloud Job Failure Prediction Analytics</h1>
+              <p class="mx-auto">
+                Comprehensive analysis and visualization of cloud job failure prediction results. 
+                Explore performance metrics, data distributions, and model insights to understand 
+                the effectiveness of our multilayer voting-based framework.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="projects-slider" class="owl-theme owl-carousel">
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download.png"
+            alt="Sample Outcomes of Results"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Sample Outcomes of Results</h2>
+            <h6>Prediction Analysis</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (1).png"
+            alt="Count plot of Cluster"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Count plot of Cluster</h2>
+            <h6>Cluster Distribution</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (2).png"
+            alt="Correlation Matrix"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Correlation Matrix</h2>
+            <h6>Feature Relationships</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (3).png"
+            alt="Confusion Matrix"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Confusion Matrix</h2>
+            <h6>Model Performance</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (4).png"
+            alt="Accuracy"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Accuracy</h2>
+            <h6>Model Accuracy Metrics</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (5).png"
+            alt="Precision"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Precision</h2>
+            <h6>Precision Metrics</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (6).png"
+            alt="Recall"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>Recall</h2>
+            <h6>Recall Metrics</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (7).png"
+            alt="F1 Score"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>F1 Score</h2>
+            <h6>F1 Score Metrics</h6>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="overlay"></div>
+          <img
+            src="../static/download (8).png"
+            alt="XAI-SHAP"
+            height="400"
+            class="zoom-img"
+          />
+          <div class="content">
+            <h2>XAI-SHAP</h2>
+            <h6>Explainable AI Analysis</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for zoom feature -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-header border-0">
+            <h5 class="modal-title text-white" id="imageModalLabel">Image Preview</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center p-0">
+            <img
+              id="modalImage"
+              src=""
+              class="img-fluid"
+              alt="Zoomed image"
+              style="max-height: 80vh; object-fit: contain;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">Copyright vicpra 2025. All rights Reserved</p>
+        Distributed By <a href="#">Job Prediction</a>
+      </div>
+    </footer>
+
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <style>
+      .zoom-img {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      
+      .zoom-img:hover {
+        transform: scale(1.05);
+      }
+      
+      #imageModal .modal-dialog {
+        max-width: 90vw;
+      }
+      
+      #imageModal .modal-content {
+        background: rgba(0, 0, 0, 0.95);
+      }
+    </style>
+    
+    <script>
+      // Zoom effect on click
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, setting up image click handlers');
+        
+        document.querySelectorAll(".zoom-img").forEach((img, index) => {
+          console.log(`Setting up click handler for image ${index}`);
+          
+          img.addEventListener("click", function (e) {
+            e.preventDefault();
+            console.log('Image clicked:', this.src);
+            
+            const modalImage = document.getElementById("modalImage");
+            const imageModal = document.getElementById("imageModal");
+            const modalTitle = document.getElementById("imageModalLabel");
+            
+            if (modalImage && imageModal && modalTitle) {
+              modalImage.src = this.src;
+              modalImage.alt = this.alt;
+              
+              // Get the image title from the parent project div
+              const projectDiv = this.closest('.project');
+              if (projectDiv) {
+                const titleElement = projectDiv.querySelector('.content h2');
+                if (titleElement) {
+                  modalTitle.textContent = titleElement.textContent;
+                } else {
+                  modalTitle.textContent = this.alt || 'Image Preview';
+                }
+              } else {
+                modalTitle.textContent = this.alt || 'Image Preview';
+              }
+              
+              console.log('Showing modal with image:', this.src);
+              
+              // Show modal using Bootstrap 5 method
+              const modal = new bootstrap.Modal(imageModal);
+              modal.show();
+            } else {
+              console.error('Modal elements not found');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
